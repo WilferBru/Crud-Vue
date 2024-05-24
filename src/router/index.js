@@ -1,5 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+//importar vistas de los estudiantes
+import EstudianteNew from '../views/estudiantes/EstudianteNew.vue'
+import EstudianteEdit from '../views/estudiantes/EstudianteEdit.vue'
+import EstudianteView from '../views/estudiantes/EstudianteView.vue'
+//importar vistas de los cursos
+import CursoList from '../views/curso/CursoList.vue'
+import CursoNew from '../views/curso/CursoNew.vue'
+import CursoEdit from '../views/curso/CursoEdit.vue'
+import CursoView from '../views/curso/CursoView.vue'
+
 
 const routes = [
   {
@@ -7,13 +17,42 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  // Ruta de los estudiantes
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/createE',
+    name: 'createE',
+    component: EstudianteNew
+  },
+  {
+    path: '/editE/:id',
+    name: 'editE',
+    component: EstudianteEdit
+  },
+  {
+    path: '/viewE/:id',
+    name: 'viewE',
+    component: EstudianteView
+  },
+  // Rutas de los Cursos
+  {
+    path: '/listC',
+    name: 'listC',
+    component: CursoList
+  },
+  {
+    path: '/createC',
+    name: 'createC',
+    component: CursoNew
+  },
+  {
+    path: '/editC/:id',
+    name: 'editC',
+    component: CursoEdit
+  },
+  {
+    path: '/viewC/:id',
+    name: 'viewC',
+    component: CursoView
   }
 ]
 
